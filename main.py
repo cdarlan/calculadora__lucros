@@ -229,6 +229,62 @@ class Calculadora_lucro():
             command=None
         )
 
+        # Itens subcontainer 02
+        self.lb_title_section02 = Label(
+            self.fr_subcontainer02,
+            text='Operação:',
+            font= "Verdana 15",
+            bg=self.fr_subcontainer02.cget('bg')
+        )
+
+        self.lb_texto_resultado_operacao=Label(
+            self.fr_subcontainer02,
+            text='O resultado aparecerá aqui assim que calcular um produto',
+            wraplength=250,
+            justify=LEFT,
+            bg=self.fr_subcontainer02.cget('bg')
+        )
+
+        # Resultado do lucro liquido
+        self.lb_title_lucro_liquido = Label(
+            self.fr_subcontainer02,
+            text='Lucro Liquido',
+            font='Verdana',
+            bg=self.fr_subcontainer02.cget('bg')
+        )
+
+        self.lb_resultado_lucro_liquido = Label(
+            self.fr_subcontainer02,
+            text='R$ 00,00',
+            font='Verdana',
+            width=5,
+            padx=100,
+            pady=5,
+            highlightthickness=1,
+            highlightbackground='gray',
+            bg=self.fr_subcontainer02.cget('bg')
+        )
+
+
+        # Resultado da margem de lucro 
+        self.lb_title_margem_lucro = Label(
+            self.fr_subcontainer02,
+            text='Margem de Lucro',
+            font='Verdana',
+            bg=self.fr_subcontainer02.cget('bg')
+        )
+
+        self.lb_resultado_margem_lucro = Label(
+            self.fr_subcontainer02,
+            text='0,00 %',
+            font='Verdana',
+            width=5,
+            padx=100,
+            pady=5,
+            highlightthickness=1,
+            highlightbackground='gray',
+            bg=self.fr_subcontainer02.cget('bg')
+        )
 
 
 
@@ -253,10 +309,21 @@ class Calculadora_lucro():
         self.en_custo_adicional.grid(row= 6, column= 1, sticky= W, padx= 5)
 
 
-        self.fr_container_btn.grid(row= 7, columnspan= 2, padx= 10, sticky= W)
-        self.btn_salvar.grid(row= 0, column= 0, sticky= W, padx = 5)
-        self.btn_calcular.grid(row= 0, column= 1, sticky= W, padx = 5)
-        self.btn_deletar.grid(row= 0, column= 2, sticky= W, padx = 5)
+        self.fr_container_btn.grid(row= 7, columnspan= 2, padx= 5)
+        self.btn_salvar.grid(row= 7, column= 0, pady = 5, padx = 3)
+        self.btn_calcular.grid(row= 7, column= 1, padx = 3)
+        self.btn_deletar.grid(row= 7, column= 2, padx = 5)
+
+        
+        # Posicionamento itens do subcontainer 02
+        self.lb_title_section02.grid(row=0, column=0, pady=10)
+        self.lb_texto_resultado_operacao.grid(row=1, column=0, pady=30)
+        self.lb_title_lucro_liquido.grid(row=2, column=0)
+        self.lb_resultado_lucro_liquido.grid(row=3, column=0, padx=5)
+        self.lb_title_margem_lucro.grid(row=4, column=0)
+        self.lb_resultado_margem_lucro.grid(row=5, column=0, padx=5, pady=(0,60))
+
+
 
 
 Calculadora_lucro()
